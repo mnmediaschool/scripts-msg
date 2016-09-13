@@ -10,7 +10,7 @@ $Detailedname = $_.Nom + " " + $_.Prénom
 $CheckIfUserAccountExists = Get-MsolUser -UserPrincipalName $_.Login -ErrorAction SilentlyContinue
 If ($CheckIfUserAccountExists -eq $Null) {$MyAction = New-MsolUser –Department $_.Centre -Title INTERVENANT -FirstName $_.Prénom `
    -DisplayName $Detailedname -LastName $_.Nom `
-   -Password Welcome06 -UserPrincipalName $_.Login `
+   -Password XXXXX -UserPrincipalName $_.Login `
    -LicenseAssignment 'IECM064:STANDARDWOFFPACK_FACULTY' `
    -UsageLocation "FR"}
 Else {$MyAction = LogWrite "$Detailedname existe déjà"}
